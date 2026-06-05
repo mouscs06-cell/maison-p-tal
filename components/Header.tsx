@@ -57,9 +57,9 @@ export default function Header() {
             <Link
               href="/"
               onClick={() => setMenuOpen(false)}
-              className="font-serif italic text-[#1c1a17] text-lg md:text-xl tracking-tight leading-none flex-shrink-0"
+              className="font-sans text-[13px] font-medium uppercase tracking-[0.15em] text-[#1c1a17] leading-none flex-shrink-0"
             >
-              Maison Pétale
+              MAISON PÉTALE
             </Link>
 
             {/* Desktop nav */}

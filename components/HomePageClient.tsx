@@ -64,7 +64,7 @@ function CollectionPhare() {
   }, { scope: sectionRef })
 
   return (
-    <section ref={sectionRef} className="bg-[#faf7f2] px-5 md:px-10 lg:px-16 py-20 md:py-32">
+    <section ref={sectionRef} className="bg-[#faf7f2] px-8 md:px-20 py-20 md:py-32">
       <div className="max-w-7xl mx-auto">
         {/* Top label */}
         <div className="mb-10 md:mb-14">
@@ -90,8 +90,9 @@ function CollectionPhare() {
                 priority
                 className="object-cover object-center transition-transform duration-700 ease-[cubic-bezier(0.32,0.72,0,1)] group-hover:scale-[1.03]"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#1c1a17]/60 to-transparent" />
-              <div className="absolute bottom-6 left-6 right-6">
+              <div className="absolute inset-0 bg-[#1c1a17]/[0.03] mix-blend-multiply pointer-events-none z-[1]" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#1c1a17]/60 to-transparent z-[2]" />
+              <div className="absolute bottom-6 left-6 right-6 z-[3]">
                 <p className="font-sans text-[9px] uppercase tracking-[0.3em] text-[#c9a090] mb-1.5">
                   Bouquets Signature
                 </p>
@@ -118,8 +119,9 @@ function CollectionPhare() {
                   quality={80}
                   className="object-cover object-center transition-transform duration-700 ease-[cubic-bezier(0.32,0.72,0,1)] group-hover:scale-[1.03]"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#1c1a17]/55 to-transparent" />
-                <div className="absolute bottom-4 left-4 right-4">
+                <div className="absolute inset-0 bg-[#1c1a17]/[0.03] mix-blend-multiply pointer-events-none z-[1]" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#1c1a17]/55 to-transparent z-[2]" />
+                <div className="absolute bottom-4 left-4 right-4 z-[3]">
                   <h3 className="font-serif italic text-[#faf7f2] text-xl leading-tight">
                     Le Jardin Sauvage
                   </h3>
@@ -141,8 +143,9 @@ function CollectionPhare() {
                   quality={80}
                   className="object-cover object-center transition-transform duration-700 ease-[cubic-bezier(0.32,0.72,0,1)] group-hover:scale-[1.03]"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#1c1a17]/55 to-transparent" />
-                <div className="absolute bottom-4 left-4 right-4">
+                <div className="absolute inset-0 bg-[#1c1a17]/[0.03] mix-blend-multiply pointer-events-none z-[1]" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#1c1a17]/55 to-transparent z-[2]" />
+                <div className="absolute bottom-4 left-4 right-4 z-[3]">
                   <h3 className="font-serif italic text-[#faf7f2] text-xl leading-tight">
                     L'Automne Doré
                   </h3>
@@ -167,8 +170,9 @@ function CollectionPhare() {
               quality={80}
               className="object-cover object-center transition-transform duration-700 ease-[cubic-bezier(0.32,0.72,0,1)] group-hover:scale-[1.02]"
             />
-            <div className="absolute inset-0 bg-[#1c1a17]/40 group-hover:bg-[#1c1a17]/50 transition-colors duration-500" />
-            <div className="absolute inset-0 flex items-center justify-center">
+            <div className="absolute inset-0 bg-[#1c1a17]/[0.03] mix-blend-multiply pointer-events-none z-[1]" />
+            <div className="absolute inset-0 bg-[#1c1a17]/40 group-hover:bg-[#1c1a17]/50 transition-colors duration-500 z-[2]" />
+            <div className="absolute inset-0 flex items-center justify-center z-[3]">
               <div className="text-center">
                 <p className="font-serif italic text-[#faf7f2] text-3xl md:text-4xl lg:text-5xl mb-4">
                   Explorer nos créations
@@ -210,7 +214,8 @@ function Atelier() {
             quality={80}
             className="object-cover object-center"
           />
-          <div className="absolute inset-0 bg-[#1c1a17]/20" />
+          <div className="absolute inset-0 bg-[#1c1a17]/[0.03] mix-blend-multiply pointer-events-none z-[1]" />
+          <div className="absolute inset-0 bg-[#1c1a17]/20 z-[2]" />
         </div>
 
         {/* Content */}
@@ -257,7 +262,7 @@ function Atelier() {
 /* ── Section 4 — Grille Produits Asymétrique ─────────────────── */
 function ProductGrid() {
   return (
-    <section className="bg-[#faf7f2] px-5 md:px-10 lg:px-16 py-20 md:py-32">
+    <section className="bg-[#faf7f2] px-8 md:px-20 py-20 md:py-32">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="mb-12 md:mb-16">
@@ -267,30 +272,25 @@ function ProductGrid() {
           />
         </div>
 
-        {/* Row 1: 2 large (6+6) */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+        {/* Row 1 */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 mb-6 md:mb-8">
           <ProductCard product={PRODUCTS[0]} priority />
           <ProductCard product={PRODUCTS[1]} />
         </div>
 
-        {/* Row 2: 3 medium (4+4+4) */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-4">
+        {/* Row 2 */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 mb-6 md:mb-8">
           <ProductCard product={PRODUCTS[2]} />
           <ProductCard product={PRODUCTS[3]} />
+        </div>
+
+        {/* Row 3 */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 mb-6 md:mb-8">
           <ProductCard product={PRODUCTS[4]} />
+          <ProductCard product={PRODUCTS[5]} />
         </div>
 
-        {/* Row 3: 1 large + 1 medium (7+5) */}
-        <div className="grid grid-cols-12 gap-4 mb-4">
-          <div className="col-span-12 md:col-span-7">
-            <ProductCard product={PRODUCTS[5]} />
-          </div>
-          <div className="col-span-12 md:col-span-5">
-            <ProductCard product={PRODUCTS[6]} />
-          </div>
-        </div>
-
-        {/* Row 4: Full-width panoramic */}
+        {/* Panoramic — Abonnement Saison */}
         <Link
           href="/products/abonnement-saison"
           className="group block relative overflow-hidden rounded-2xl"
@@ -304,8 +304,9 @@ function ProductGrid() {
               quality={80}
               className="object-cover object-center transition-transform duration-700 group-hover:scale-[1.02]"
             />
-            <div className="absolute inset-0 bg-gradient-to-r from-[#1c1a17]/70 via-[#1c1a17]/40 to-transparent" />
-            <div className="absolute inset-0 flex items-center">
+            <div className="absolute inset-0 bg-[#1c1a17]/[0.03] mix-blend-multiply pointer-events-none z-[1]" />
+            <div className="absolute inset-0 bg-gradient-to-r from-[#1c1a17]/70 via-[#1c1a17]/40 to-transparent z-[2]" />
+            <div className="absolute inset-0 flex items-center z-[3]">
               <div className="pl-8 md:pl-14">
                 <span className="font-sans text-[9px] uppercase tracking-[0.3em] text-[#c9a090] block mb-3">
                   Offre Spéciale
@@ -350,7 +351,7 @@ function SavoirFaire() {
   ]
 
   return (
-    <section id="savoir-faire" className="bg-[#1c1a17] px-5 md:px-10 lg:px-16 py-20 md:py-32">
+    <section id="savoir-faire" className="bg-[#1c1a17] px-8 md:px-20 py-20 md:py-32">
       <div className="max-w-7xl mx-auto">
         <div className="mb-12 md:mb-16">
           <p className="font-sans text-[10px] uppercase tracking-[0.4em] text-[#9b7e5e] mb-6">
@@ -382,7 +383,8 @@ function SavoirFaire() {
                   quality={80}
                   className="object-cover object-center"
                 />
-                <div className="absolute inset-0 bg-[#1c1a17]/15" />
+                <div className="absolute inset-0 bg-[#1c1a17]/[0.03] mix-blend-multiply pointer-events-none z-[1]" />
+                <div className="absolute inset-0 bg-[#1c1a17]/15 z-[2]" />
               </div>
               <p className="font-sans text-[10px] uppercase tracking-[0.25em] text-[#9b7e5e] mb-2">
                 0{i + 1}
@@ -411,7 +413,7 @@ function Lookbook() {
   ]
 
   return (
-    <section className="bg-[#faf7f2] px-5 md:px-10 lg:px-16 py-20 md:py-32">
+    <section className="bg-[#faf7f2] px-8 md:px-20 py-20 md:py-32">
       <div className="max-w-7xl mx-auto">
         <div className="mb-12 md:mb-16">
           <p className="font-sans text-[10px] uppercase tracking-[0.4em] text-[#9b7e5e] mb-6">
@@ -424,7 +426,7 @@ function Lookbook() {
         </div>
 
         {/* Masonry-like grid */}
-        <div className="grid grid-cols-2 md:grid-cols-3 md:grid-rows-2 gap-3 md:gap-4" style={{ gridAutoRows: "280px" }}>
+        <div className="grid grid-cols-2 md:grid-cols-3 md:grid-rows-2 gap-4" style={{ gridAutoRows: "280px" }}>
           {images.map((img, i) => (
             <motion.div
               key={img.src}
@@ -432,7 +434,7 @@ function Lookbook() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true, amount: 0.2 }}
               transition={{ delay: i * 0.07, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-              className={`relative overflow-hidden rounded-2xl group ${img.span}`}
+              className={`relative overflow-hidden rounded-xl group ${img.span}`}
             >
               <Image
                 src={img.src}
@@ -442,7 +444,8 @@ function Lookbook() {
                 quality={80}
                 className="object-cover object-center transition-transform duration-700 group-hover:scale-[1.04]"
               />
-              <div className="absolute inset-0 bg-[#1c1a17]/0 group-hover:bg-[#1c1a17]/20 transition-colors duration-500" />
+              <div className="absolute inset-0 bg-[#1c1a17]/[0.03] mix-blend-multiply pointer-events-none z-[1]" />
+              <div className="absolute inset-0 bg-[#1c1a17]/0 group-hover:bg-[#1c1a17]/20 transition-colors duration-500 z-[2]" />
             </motion.div>
           ))}
         </div>
@@ -454,10 +457,10 @@ function Lookbook() {
 /* ── Section 7 — Campagne Editoriale ────────────────────────── */
 function Campagne() {
   return (
-    <section className="bg-[#1c1a17] overflow-hidden">
-      <div className="grid grid-cols-1 md:grid-cols-2 min-h-[500px] md:min-h-[680px]">
+    <section className="bg-[#1c1a17] px-8 md:px-20 py-8 md:py-12">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 min-h-[500px] md:min-h-[660px]">
         {/* Left image */}
-        <div className="relative aspect-[4/5] md:aspect-auto overflow-hidden">
+        <div className="relative aspect-[4/5] md:aspect-auto overflow-hidden rounded-2xl">
           <Image
             src="/f3.jpg"
             alt="Collection Printemps 2025"
@@ -466,10 +469,11 @@ function Campagne() {
             quality={80}
             className="object-cover object-center"
           />
+          <div className="absolute inset-0 bg-[#1c1a17]/[0.03] mix-blend-multiply pointer-events-none z-[1]" />
         </div>
 
         {/* Right — text overlay */}
-        <div className="relative aspect-[4/5] md:aspect-auto overflow-hidden">
+        <div className="relative aspect-[4/5] md:aspect-auto overflow-hidden rounded-2xl">
           <Image
             src="/f18.jpg"
             alt="Collection Printemps 2025"
@@ -478,8 +482,9 @@ function Campagne() {
             quality={80}
             className="object-cover object-center"
           />
-          <div className="absolute inset-0 bg-[#1c1a17]/30" />
-          <div className="absolute inset-0 flex items-end justify-start p-8 md:p-14">
+          <div className="absolute inset-0 bg-[#1c1a17]/[0.03] mix-blend-multiply pointer-events-none z-[1]" />
+          <div className="absolute inset-0 bg-[#1c1a17]/30 z-[2]" />
+          <div className="absolute inset-0 flex items-end justify-start p-8 md:p-14 z-[3]">
             <div>
               <p className="font-sans text-[10px] uppercase tracking-[0.5em] text-[#c9a090] mb-3">
                 Paris · 2025
@@ -530,7 +535,7 @@ function Testimonials() {
 
   return (
     <section className="bg-[#faf7f2] py-20 md:py-32 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-5 md:px-10 mb-12 md:mb-16">
+      <div className="max-w-7xl mx-auto px-8 md:px-20 mb-12 md:mb-16">
         <WordReveal
           text={"Ce qu'ils\ndisent de nous"}
           className="font-serif italic text-[#1c1a17] text-4xl md:text-6xl leading-[0.92]"
@@ -596,7 +601,7 @@ const reassuranceIcons: Record<string, React.ReactNode> = {
 
 function Reassurance() {
   return (
-    <section className="bg-[#1c1a17] px-5 md:px-10 lg:px-16 py-20 md:py-28">
+    <section className="bg-[#1c1a17] px-8 md:px-20 py-20 md:py-28">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 md:gap-8">
           {CONFIG.reassurance.map((item, i) => (
@@ -626,7 +631,7 @@ function Reassurance() {
 /* ── Section 10 — Newsletter ─────────────────────────────────── */
 function Newsletter() {
   return (
-    <section className="relative bg-[#faf7f2] px-5 md:px-10 py-24 md:py-36 overflow-hidden">
+    <section className="relative bg-[#faf7f2] px-8 md:px-20 py-24 md:py-36 overflow-hidden">
       {/* Background image filigrane */}
       <div className="absolute inset-0 opacity-[0.06]">
         <Image src="/f1.jpg" alt="" fill className="object-cover object-center" aria-hidden="true" />
