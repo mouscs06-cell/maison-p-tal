@@ -434,7 +434,7 @@ function Lookbook() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true, amount: 0.2 }}
               transition={{ delay: i * 0.07, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-              className={`relative overflow-hidden rounded-xl group ${img.span}`}
+              className={`relative overflow-hidden rounded-2xl group ${img.span}`}
             >
               <Image
                 src={img.src}
@@ -534,8 +534,8 @@ function Testimonials() {
   )
 
   return (
-    <section className="bg-[#faf7f2] py-20 md:py-32 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-8 md:px-20 mb-12 md:mb-16">
+    <section className="bg-[#faf7f2] px-8 md:px-20 py-20 md:py-32 overflow-hidden">
+      <div className="max-w-7xl mx-auto mb-12 md:mb-16">
         <WordReveal
           text={"Ce qu'ils\ndisent de nous"}
           className="font-serif italic text-[#1c1a17] text-4xl md:text-6xl leading-[0.92]"
@@ -543,7 +543,7 @@ function Testimonials() {
       </div>
 
       {/* Row 1 - scrolls left */}
-      <div className="mb-4 overflow-hidden">
+      <div className="mb-4 overflow-hidden -mx-8 md:-mx-20">
         <div className="ticker-track flex">
           {[...row1, ...row1, ...row1, ...row1].map((item, i) => (
             <TestimonialCard key={i} item={item} />
@@ -552,7 +552,7 @@ function Testimonials() {
       </div>
 
       {/* Row 2 - scrolls right (reverse) */}
-      <div className="overflow-hidden">
+      <div className="overflow-hidden -mx-8 md:-mx-20">
         <div
           className="flex"
           style={{

@@ -33,10 +33,7 @@ export default function ProductCard({ product, priority = false }: ProductCardPr
 
   return (
     <Link href={`/products/${product.id}`} className="group block">
-      {/* Double-Bezel outer shell */}
-      <div className="rounded-2xl bg-[#f0ebe3]/40 p-1.5 ring-1 ring-[#1c1a17]/5">
-        {/* Inner core */}
-        <div className="rounded-[calc(1rem-6px)] bg-[#faf7f2] overflow-hidden">
+      <div className="bg-white rounded-2xl overflow-hidden border border-[#1c1a17]/[0.04] transition-all duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] group-hover:-translate-y-1 group-hover:shadow-[0_20px_50px_rgba(28,26,23,0.08)]">
           {/* Image */}
           <div className="relative aspect-[4/5] overflow-hidden bg-[#f0ebe3]">
             <Image
@@ -96,7 +93,6 @@ export default function ProductCard({ product, priority = false }: ProductCardPr
               </span>
             </div>
           </div>
-        </div>
       </div>
     </Link>
   )
