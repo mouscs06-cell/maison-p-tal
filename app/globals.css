@@ -1,26 +1,191 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
+/* ── Design Tokens ──────────────────────────────────────────── */
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  /* Fonts — variables injected by next/font in layout.tsx */
+  --font-sans: var(--font-inter);
+  --font-serif: var(--font-cormorant);
+  --font-cormorant: var(--font-cormorant);
+  --font-jost: var(--font-inter); /* fallback for existing scroll-hero component */
+  --font-inter: var(--font-inter);
+
+  /* Brand colors */
+  --color-ivory: #faf7f2;
+  --color-dark: #1c1a17;
+  --color-bronze: #9b7e5e;
+  --color-bronze-dark: #7a6548;
+  --color-sage: #7a8c6e;
+  --color-rose: #c9a090;
+  --color-text: #1c1a17;
+  --color-muted: #8a847c;
+  --color-border: #e8e2d9;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* ── Base Styles ─────────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: auto; /* Lenis handles smooth scroll */
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: #faf7f2;
+  color: #1c1a17;
+  font-family: var(--font-sans, 'Inter', system-ui, sans-serif);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* ── Typography ─────────────────────────────────────────────── */
+.font-cormorant,
+.font-serif {
+  font-family: var(--font-cormorant, 'Cormorant Garamond', Georgia, serif);
+}
+
+.font-sans,
+.font-inter {
+  font-family: var(--font-sans, 'Inter', system-ui, sans-serif);
+}
+
+/* Cormorant italic display utility */
+.italic-display {
+  font-style: italic;
+  letter-spacing: -0.02em;
+}
+
+/* ── Scroll Hint Animation ───────────────────────────────────── */
+@keyframes scrollHint {
+  0%   { transform: translateY(-100%); }
+  100% { transform: translateY(300%); }
+}
+
+/* ── Ticker Animation ────────────────────────────────────────── */
+@keyframes tickerScroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.ticker-track {
+  animation: tickerScroll 28s linear infinite;
+  will-change: transform;
+}
+
+.ticker-track:hover {
+  animation-play-state: paused;
+}
+
+/* ── Clip-path Reveal ────────────────────────────────────────── */
+@keyframes clipReveal {
+  from { clip-path: inset(0 100% 0 0); }
+  to   { clip-path: inset(0 0% 0 0); }
+}
+
+/* ── Product card hover ──────────────────────────────────────── */
+.product-card {
+  transition: transform 0.55s cubic-bezier(0.32, 0.72, 0, 1),
+              box-shadow 0.55s cubic-bezier(0.32, 0.72, 0, 1);
+}
+
+.product-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 24px 48px rgba(28, 26, 23, 0.12);
+}
+
+.product-card:hover .product-image {
+  transform: scale(1.04);
+}
+
+.product-image {
+  transition: transform 0.7s cubic-bezier(0.32, 0.72, 0, 1);
+}
+
+/* ── Button fill-from-left ───────────────────────────────────── */
+.btn-fill {
+  position: relative;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.btn-fill::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: #9b7e5e;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.45s cubic-bezier(0.32, 0.72, 0, 1);
+  z-index: -1;
+}
+
+.btn-fill:hover::after {
+  transform: scaleX(1);
+}
+
+/* ── Image overlay ───────────────────────────────────────────── */
+.img-overlay::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(28, 26, 23, 0.55) 0%, transparent 60%);
+  transition: opacity 0.4s ease;
+}
+
+.img-overlay:hover::after {
+  opacity: 0.8;
+}
+
+/* ── Custom scrollbar ────────────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #faf7f2;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c9a090;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #9b7e5e;
+}
+
+/* ── Selection color ─────────────────────────────────────────── */
+::selection {
+  background: #c9a090;
+  color: #1c1a17;
+}
+
+/* ── Focus styles ────────────────────────────────────────────── */
+:focus-visible {
+  outline: 2px solid #9b7e5e;
+  outline-offset: 3px;
+}
+
+/* ── Reduced motion ──────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .ticker-track {
+    animation: none;
+  }
+
+  .product-card,
+  .product-image,
+  .btn-fill::after {
+    transition: none;
+  }
+
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
