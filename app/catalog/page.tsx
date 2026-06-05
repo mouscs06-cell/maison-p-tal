@@ -21,7 +21,7 @@ export default function CatalogPage() {
 
       <main className="bg-[#faf7f2] min-h-[100dvh]">
         {/* Hero banner */}
-        <div className="bg-[#1c1a17] pt-36 pb-16 px-5 md:px-10">
+        <div className="bg-[#1c1a17] pt-36 pb-16 px-8 md:px-20">
           <div className="max-w-7xl mx-auto">
             <p className="font-sans text-[10px] uppercase tracking-[0.4em] text-[#9b7e5e] mb-4">
               Art Floral · Paris
@@ -40,7 +40,7 @@ export default function CatalogPage() {
         </div>
 
         {/* Filters */}
-        <div className="sticky top-0 z-[40] bg-[#faf7f2]/95 backdrop-blur-sm border-b border-[#e8e2d9] px-5 md:px-10 py-4">
+        <div className="sticky top-0 z-[40] bg-[#faf7f2]/95 backdrop-blur-sm border-b border-[#e8e2d9] px-8 md:px-20 py-4">
           <div className="max-w-7xl mx-auto">
             <div className="flex items-center gap-2 overflow-x-auto scrollbar-hide pb-1">
               {CATEGORIES.map((cat) => (
@@ -61,7 +61,7 @@ export default function CatalogPage() {
         </div>
 
         {/* Products grid */}
-        <div className="max-w-7xl mx-auto px-5 md:px-10 py-12 md:py-16">
+        <div className="max-w-7xl mx-auto px-8 md:px-20 py-12 md:py-16">
           <p className="font-sans text-[12px] text-[#8a847c] mb-8">
             {filtered.length} {filtered.length === 1 ? "composition" : "compositions"}
           </p>
@@ -73,7 +73,7 @@ export default function CatalogPage() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -8 }}
               transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
-              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5"
+              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8"
             >
               {filtered.map((product, i) => (
                 <motion.div

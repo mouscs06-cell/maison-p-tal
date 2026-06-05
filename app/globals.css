@@ -87,25 +87,6 @@ body {
   to   { clip-path: inset(0 0% 0 0); }
 }
 
-/* ── Product card hover ──────────────────────────────────────── */
-.product-card {
-  transition: transform 0.55s cubic-bezier(0.32, 0.72, 0, 1),
-              box-shadow 0.55s cubic-bezier(0.32, 0.72, 0, 1);
-}
-
-.product-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 24px 48px rgba(28, 26, 23, 0.12);
-}
-
-.product-card:hover .product-image {
-  transform: scale(1.04);
-}
-
-.product-image {
-  transition: transform 0.7s cubic-bezier(0.32, 0.72, 0, 1);
-}
-
 /* ── Button fill-from-left ───────────────────────────────────── */
 .btn-fill {
   position: relative;
