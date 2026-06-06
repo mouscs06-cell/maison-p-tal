@@ -112,7 +112,7 @@ export default function FaqPage() {
     <>
       <Header />
       <main className="bg-[#faf7f2] pt-32 pb-24">
-        <div className="max-w-3xl mx-auto px-5 md:px-10">
+        <div className="max-w-3xl mx-auto px-8 md:px-20">
           {/* Hero */}
           <div className="mb-16">
             <p className="font-sans text-[10px] uppercase tracking-[0.4em] text-[#9b7e5e] mb-4">

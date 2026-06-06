@@ -41,7 +41,7 @@ export default function ProductDetailClient({ product, related }: Props) {
 
       <main className="bg-[#faf7f2] pt-28 md:pt-32">
         {/* Breadcrumb */}
-        <nav aria-label="Fil d'Ariane" className="max-w-7xl mx-auto px-5 md:px-10 py-4">
+        <nav aria-label="Fil d'Ariane" className="max-w-7xl mx-auto px-8 md:px-20 py-4">
           <ol className="flex items-center gap-2 font-sans text-[11px] text-[#8a847c]">
             <li>
               <Link href="/" className="hover:text-[#1c1a17] transition-colors">
@@ -62,7 +62,7 @@ export default function ProductDetailClient({ product, related }: Props) {
         </nav>
 
         {/* Product main */}
-        <div className="max-w-7xl mx-auto px-5 md:px-10 py-8 md:py-12">
+        <div className="max-w-7xl mx-auto px-8 md:px-20 py-8 md:py-12">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 lg:gap-24">
             {/* Image */}
             <motion.div
@@ -245,7 +245,7 @@ export default function ProductDetailClient({ product, related }: Props) {
 
         {/* Related products */}
         {related.length > 0 && (
-          <section className="bg-[#faf7f2] px-5 md:px-10 py-16 md:py-24 border-t border-[#e8e2d9]">
+          <section className="bg-[#faf7f2] px-8 md:px-20 py-16 md:py-24 border-t border-[#e8e2d9]">
             <div className="max-w-7xl mx-auto">
               <h2 className="font-serif italic text-[#1c1a17] text-3xl mb-10">
                 Vous aimerez aussi

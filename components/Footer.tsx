@@ -30,7 +30,7 @@ export default function Footer() {
   return (
     <footer className="bg-[#1c1a17] text-[#faf7f2]">
       {/* Main footer */}
-      <div className="max-w-7xl mx-auto px-6 md:px-12 py-20 md:py-28">
+      <div className="max-w-7xl mx-auto px-8 md:px-20 py-20 md:py-28">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-8">
           {/* Brand column */}
           <div className="md:col-span-1">
@@ -152,7 +152,7 @@ export default function Footer() {
 
       {/* Bottom bar */}
       <div className="border-t border-[#faf7f2]/8">
-        <div className="max-w-7xl mx-auto px-6 md:px-12 py-5 flex flex-col md:flex-row items-center justify-between gap-3">
+        <div className="max-w-7xl mx-auto px-8 md:px-20 py-5 flex flex-col md:flex-row items-center justify-between gap-3">
           <p className="font-sans text-[11px] text-[#8a847c] order-2 md:order-1">
             &copy; {year} {CONFIG.brandName}. Tous droits réservés.
           </p>

@@ -12,7 +12,7 @@ export default function MentionsLegalesPage() {
     <>
       <Header />
       <main className="bg-[#faf7f2] pt-32 pb-24">
-        <div className="max-w-3xl mx-auto px-5 md:px-10">
+        <div className="max-w-3xl mx-auto px-8 md:px-20">
           <div className="mb-12">
             <h1 className="font-serif italic text-[#1c1a17] text-5xl leading-[0.92]">
               Mentions légales
